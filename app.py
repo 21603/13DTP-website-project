@@ -35,6 +35,11 @@ def home():
     return render_template('index.html', results=results)
 
 
+#dynamic route to display all the meals from a particlar base
+@app.route('/meals/<int:id>')
+def meals(id):
+    #query the database for all meals of id = id
+    return str(id)
 
 
 
