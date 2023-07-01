@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+{# use the __repr__ function to get the page title by just diplaying the object #}
+<h2 style="color:green;">{{ Japanese_food }}</h2>
+<p>{{ Japanese_food.name }}</p>
+<ul>
+    {% for Ingredient in Meal.Ingredience %}
+        <li>{{ Ingredient.name }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

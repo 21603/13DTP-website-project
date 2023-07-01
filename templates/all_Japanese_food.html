@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<h2 style="color:green;">ALL JAPANESE FOOD</h2>
+<ul>
+    {% for meal in Japanese_food %}
+        <li><a href="/Japanese_food/{{ meal.id }}">{{ meal.name }}</a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
