@@ -1,11 +1,7 @@
-{% extends 'layout.html' %}
-{% block content %}
-
-<h2 style="color:green;">ALL JAPANESE FOOD</h2>
+<!-- all_Japanese_food.html -->
+<h1>All Japanese Food</h1>
 <ul>
-    {% for meal in Japanese_food %}
-        <li><a href="/Japanese_food/{{ meal.id }}">{{ meal.name }}</a></li>
-    {% endfor %}
+  {% for food in Japanese_food %}
+  <li><a href="{{ url_for('Japanese_food', id=food.id) }}">{{ food.name }}</a></li>
+  {% endfor %}
 </ul>
-
-{% endblock %}
