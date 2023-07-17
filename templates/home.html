@@ -1,8 +1,9 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1 style="color:green";>Hello World</h1>
-<p> Some final thoughts about this project and where it could be taken</p>
+<h1 style="font-size: 50px; color:rgba(0, 0, 0, 0.822)" ;>Japanese Traditional Food</h1>
+<p style="font-size: 35px;"> Choose Your Own Japanese Meal</p>
+<img src="{{ url_for('static', filename='images/Noodles.jpg') }}" alt="Japanese Food Image">
 <ol>
   <li style="padding-top:5px;">The database also has a one-to-many relationship (sauce) - this might be enough for Y12s</li>
   <li style="padding-top:5px;">There are descriptions for toppings - this could be extended (GF, DF, photos etc)</li>

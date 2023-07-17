@@ -7,10 +7,6 @@ app.config.from_object(Config)
 db = SQLAlchemy(app)
 
 
-# Initialize the SQLAlchemy instance with the Flask app
-db.init_app(app)
-
-
 # can't do this import until we have 'app' in place
 # sometimes can use from models import pizzas but not with M2M
 # Linters will scream about this - there are codes to stop that
