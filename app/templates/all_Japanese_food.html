@@ -1,7 +1,7 @@
 <!-- all_Japanese_food.html -->
-<h1>All Japanese Food</h1>
+<h1 style="color:rgb(0, 0, 0)";>All Japanese Food</h1>
 <ul>
   {% for food in Japanese_food %}
-  <li><a href="{{ url_for('Japanese_food', id=food.id) }}">{{ food.name }}</a></li>
+    <li><a href="{{ url_for('Japanese_food', id=food.id) }}">{{ food.name }}</a></li>
   {% endfor %}
 </ul>

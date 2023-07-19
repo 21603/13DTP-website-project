@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+{# use the __repr__ function to get the page title by just diplaying the object #}
+{% if meals|length > 0 %}
+<h2 style="color:green;">{{ meals[0].base_name }}</h2>
+{% for Meal in meals %}
+  <p>{{ Meal.name }}</p>
+{% endfor %}
+
+
+{% else %}
+<h2>NO Meals WITH THAT BASE!</h2>
+{% endif %}
+
+
+{% endblock %}
