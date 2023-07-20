@@ -2,10 +2,10 @@
 {% block content %}
 
 {# use the __repr__ function to get the page title by just diplaying the object #}
-<h2 style="color:green;">{{ Japanese_food }}</h2>
+<h2 style="color:rgb(86, 73, 3);">{{ Japanese_food }}</h2>
 <p>{{ Japanese_food.name }}</p>
 <ul>
-    {% for Ingredient in Meal.Ingredience %}
+    {% for Ingredient in Japanese_food.ingredients %}
         <li>{{ Ingredient.name }}</li>
     {% endfor %}
 </ul>

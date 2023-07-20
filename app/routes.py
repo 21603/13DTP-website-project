@@ -4,26 +4,22 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 
 
-import sys
-import os
-# Add parent directory to the Python path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-sys.path.insert(0, parent_dir)
-
 basedir = os.path.abspath(os.path.dirname(__file__))
 db = SQLAlchemy()
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, "Japanese food.db")
 db.init_app(app)
 
+
 import app.models as models
+
 
 # basic route
 @app.route('/')
 def root():
     return render_template('home.html', page_title='HOME')
 
-# about route
+
+#about route
 @app.route('/about')
 def about():
     return render_template('about.html', page_title='ABOUT')
