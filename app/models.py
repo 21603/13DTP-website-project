@@ -1,3 +1,7 @@
+# model for each table - this is the 'translation layer'
+#between Flask and SQL, And yoy need a way to handle the many-to-many
+# relationship between Meal and Ingredients
+
 from app.routes import db
 
 # Association table to represent the many-to-many relationship between Meal and Ingredient
