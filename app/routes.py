@@ -34,7 +34,6 @@ def all_Japanese_food():
 
 # Display the details of one Japanese food including its toppings
 @app.route('/Japanese_food/<int:id>')
-@app.route('/Japanese_food/<int:id>')
 def Japanese_food(id):
     # Get the Japanese food, but throw a 404 error if the id doesn't exist
     Japanese_food = models.Meal.query.get(id)
