@@ -1,13 +1,14 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-{# use the __repr__ function to get the page title by just diplaying the object #}
-<h2 style="color:rgb(86, 73, 3);">{{ Japanese_food }}</h2>
-<p>{{ Japanese_food.name }}</p>
+<!-- Japanese_food.html -->
+<h1 style="color: rgb(0, 0, 0)">{{ Japanese_food.name }}</h1>
+<img src="{{ Japanese_food.image_url }}" alt="{{ Japanese_food.name }}" width="200" height="200">
+<p>Ingredients:</p>
 <ul>
-    {% for Ingredient in Japanese_food.ingredients %}
-        <li>{{ Ingredient.name }}</li>
-    {% endfor %}
+  {% for ingredient in Japanese_food.ingredients %}
+    <li>{{ ingredient }}</li>
+  {% endfor %}
 </ul>
 
 {% endblock %}
