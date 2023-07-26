@@ -1,6 +1,33 @@
-/* All my css for the whole site! */
-.base_image {
-    width: 15%;
-    height: auto;
-  }
+/* style.css */
 
+.page-title {
+  font-size: 45px;
+  color: rgba(0, 0, 0, 0.822);
+}
+/* CSS Reset - optional, to remove default browser styles */
+body, h1, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Your existing custom styles */
+/* Add your existing styles here, if you have any */
+
+/* New styles for the About Us page */
+.about-container {
+  text-align: center;
+  margin: 20px auto;
+  max-width: 800px;
+}
+
+.about-header {
+  font-size: 45px;
+  color: rgb(0, 0, 0);
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  line-height: 1.5;
+}
