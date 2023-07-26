@@ -2,13 +2,17 @@
 {% block content %}
 
 <!-- Japanese_food.html -->
-<h1 style="color: rgb(0, 0, 0)">{{ Japanese_food.name }}</h1>
-<img src="{{ Japanese_food.image_url }}" alt="{{ Japanese_food.name }}" width="200" height="200">
-<p>Ingredients:</p>
-<ul>
-  {% for ingredient in Japanese_food.ingredients %}
-    <li>{{ ingredient }}</li>
-  {% endfor %}
-</ul>
+<div class="japanese-food-details">
+  <h1 class="food-name">{{ Japanese_food.name }}</h1>
+  <img class="food-image" src="{{ Japanese_food.image_url }}" alt="{{ Japanese_food.name }}" width="200" height="200">
+  <div class="ingredients">
+    <h2>Ingredients:</h2>
+    <ul>
+      {% for ingredient in Japanese_food.ingredients %}
+        <li>{{ ingredient }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
 
 {% endblock %}
