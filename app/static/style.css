@@ -1,13 +1,8 @@
-/* style.css */
-
-.page-title {
-  font-size: 45px;
-  color: rgba(0, 0, 0, 0.822);
-}
-/* CSS Reset - optional, to remove default browser styles */
-body, h1, p {
+body, h1, p, ul, li, a, img {
   margin: 0;
   padding: 0;
+  border: none;
+  text-decoration: none;
 }
 
 /* Your existing custom styles */
@@ -30,4 +25,38 @@ body, h1, p {
   font-size: 20px;
   color: rgb(0, 0, 0);
   line-height: 1.5;
+}
+
+/* New styles for the Japanese Food page */
+.page-title {
+  font-size: 45px;
+  color: rgba(0, 0, 0, 0.822);
+}
+
+.food-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.food-item {
+  text-align: center;
+}
+
+.food-image {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.food-name {
+  font-size: 16px;
+  display: block;
+  margin-top: 10px;
+  color: rgba(0, 0, 0, 0.8);
 }
