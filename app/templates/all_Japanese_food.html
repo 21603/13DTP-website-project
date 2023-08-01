@@ -1,16 +1,64 @@
 {% extends 'layout.html' %}
 {% block content %}
-  <h1 class="page-title">All Japanese Food</h1>
 
-  <ul class="food-list">
-    {% for food in Japanese_food %}
-      <li class="food-item">
-        <a href="{{ url_for('Japanese_food', id=food.id) }}">
-          <img src="{{ food.image_url }}" alt="{{ food.name }}" width="600" height="400">
-          <span class="food-name">{{ food.name }}</span>
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+<h1 class="page-title">All Japanese Food</h1>
+
+<ul class="food-list">
+  {% for food in Japanese_food %}
+    <li class="food-item">
+      <a class="food-link" href="{{ url_for('Japanese_food', id=food.id) }}">
+        <div class="food-image-container">
+          <img class="food-image" src="{{ food.image_url }}" alt="{{ food.name }}">
+        </div>
+        <span class="food-name">{{ food.name }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<style>
+  /* Add your existing CSS styles here */
+
+  .food-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the image container width */
+    grid-gap: 20px;
+    padding: 0;
+    margin-top: 20px;
+  }
+
+  .food-item {
+    text-align: center;
+  }
+
+  .food-image-container {
+    width: 250px; /* Set the desired width for the image container */
+    height: 150px; /* Set the desired height for the image container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .food-image {
+    width: 100%; /* Set the width to 100% to fill the container */
+    height: 100%; /* Set the height to 100% to fill the container */
+    object-fit: cover; /* Maintain the image's aspect ratio and cover the container */
+  }
+
+  .food-name {
+    font-size: 16px; /* Adjust the font size as needed */
+    font-weight: bold; /* Add bold style to the food names */
+    color: #007BFF; /* Set the color of the meal names to a preferred value */
+  }
+
+  .food-link {
+    text-decoration: none; /* Remove underline from the link */
+    color: #007BFF; /* Set the link color to a preferred value */
+    display: block; /* Make the link fill the entire container width */
+  }
+</style>
 
 {% endblock %}

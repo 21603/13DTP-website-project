@@ -4,7 +4,13 @@
 <!-- Japanese_food.html -->
 <div class="japanese-food-details">
   <h1 class="food-name">{{ Japanese_food.name }}</h1>
-  <img class="food-image" src="{{ Japanese_food.image_url }}" alt="{{ Japanese_food.name }}" width="600" height="400">
+  <div class="food-image-container">
+    <img class="food-image" src="{{ Japanese_food.image_url }}" alt="{{ Japanese_food.name }}">
+  </div>
+  <div class="description">
+    <h2>Description:</h2>
+    <p>{{ Japanese_food.description }}</p>
+  </div>
   <div class="ingredients">
     <h2>Ingredients:</h2>
     <ul>
@@ -14,5 +20,34 @@
     </ul>
   </div>
 </div>
+
+<style>
+  /* Add your existing CSS styles here */
+
+  .food-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 600px; /* Set the desired width for the image container */
+    height: 400px; /* Set the desired height for the image container */
+    overflow: hidden; /* Hide any parts of the image that exceed the container's dimensions */
+  }
+
+  .food-image {
+    width: 100%; /* Set the width to 100% to fill the container */
+    height: 100%; /* Set the height to 100% to fill the container */
+    object-fit: cover; /* Maintain the image's aspect ratio and cover the container */
+  }
+
+  .food-name {
+    font-size: 24px; /* Adjust the font size as needed */
+    font-weight: bold; /* Add bold style to the meal names */
+  }
+
+  .description, .ingredients {
+    margin-bottom: 20px;
+  }
+</style>
 
 {% endblock %}
