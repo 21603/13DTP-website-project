@@ -1,20 +1,20 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-  <h1 class="page-title" style="font-size: 36px;">Welcome to Our Japanese Food Website</h1>
-  <div class="base-section">
-    <h2>Select a Base:</h2>
-    <div class="base-list">
-      {% for base in bases %}
-      <div class="base-item">
-        <input type="radio" name="selected_base" value="{{ base.id }}" onclick="showBaseImage('{{ url_for('static', filename=base.image_url) }}')">
-        <img src="/static/images/japanese-rice-square.jpg" alt="rice" class="base-image">
-        <p>{{ base.name }}</p>
-      </div>
-      {% endfor %}
+<h1 class="page-title" style="font-size: 36px;">Welcome to Our Japanese Food Website</h1>
+<div class="base-section">
+  <h2>Select a Base:</h2>
+  <div class="base-list">
+    {% for base in bases %}
+    <div class="base-item">
+      <input type="radio" name="selected_base" value="{{ base.id }}" onclick="showBaseImage('{{ url_for('static', filename=base.image_url) }}')">
+      <img src="{{ url_for('static', filename=base.image_url) }}" alt="{{ base.name }}" class="base-image">
+      <p>{{ base.name }}</p>
     </div>
-    <img id="selected-base-image" src="" alt="Selected Base Image" class="selected-base-image">
+    {% endfor %}
   </div>
+  <img id="selected-base-image" src="" alt="Selected Base Image" class="selected-base-image">
+</div>
 
   <h2 class="section-title">Japanese Food Features:</h2>
   <img src="{{ url_for('static', filename='images/Oseti.jpg') }}" alt="Japanese Food Image">
