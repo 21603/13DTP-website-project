@@ -1,9 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
  <head>
    <title>Example Site - {{page_title}}</title>
+   <link rel="stylesheet" href="styles.css">
  </head>
- <body>
+ <body class="page-container">
    {% include 'header.html' %}
    {% include 'nav.html' %}
    {% block content %}{% endblock %}

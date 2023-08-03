@@ -15,6 +15,9 @@ class Base(db.Model):
     description = db.Column(db.Text())
     image_url = db.Column(db.Text())
 
+    # Establishing a relationship with the Meal table (one-to-many)
+    meals = db.relationship('Meal', backref='base', lazy=True)
+
     def __repr__(self):
         return self.name
 
@@ -30,9 +33,6 @@ class Meal(db.Model):
 
     # Foreign key relationship to the Base table
     base_id = db.Column(db.Integer, db.ForeignKey('Base.id'))
-
-    # Establishing a relationship with the Base table (one-to-many)
-    base = db.relationship('Base', backref='meals')
 
     # Establishing a relationship with the Ingredient table through the MealIngredient association table (many-to-many)
     ingredients = db.relationship('Ingredient', secondary=MealIngredient, backref='meals')

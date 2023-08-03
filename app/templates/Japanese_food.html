@@ -2,50 +2,60 @@
 {% block content %}
 
 <!-- Japanese_food.html -->
-<div class="japanese-food-details">
-  <h1 class="food-name">{{ Japanese_food.name }}</h1>
-  <div class="food-image-container">
+<div class="japanese-food-details" style="background-color: #cdcdcd; padding: 30px; border-radius: 10px;">
+  <h1 class="food-name" style="font-size: 42px;">{{ Japanese_food.name }}</h1>
+  <div class="food-image-container" style="margin-bottom: 30px; max-height: 500px;">
     <img class="food-image" src="{{ Japanese_food.image_url }}" alt="{{ Japanese_food.name }}">
   </div>
   <div class="description">
-    <h2>Description:</h2>
-    <p>{{ Japanese_food.description }}</p>
+    <h2 style="font-size: 24px;">Description:</h2>
+    <p style="font-size: 20px;">{{ Japanese_food.description }}</p>
   </div>
   <div class="ingredients">
-    <h2>Ingredients:</h2>
-    <ul>
+    <h2 style="font-size: 24px;">Ingredients:</h2>
+    <ul style="font-size: 20px;">
       {% for ingredient in Japanese_food.ingredients %}
         <li>{{ ingredient }}</li>
       {% endfor %}
     </ul>
+  </div>
+  <div class="price">
+    <h2 style="font-size: 24px;">Price:</h2>
+    <p style="font-size: 20px;">{{ Japanese_food.price }}</p>
   </div>
 </div>
 
 <style>
   /* Add your existing CSS styles here */
 
+  /* Additional styles for Japanese_food.html */
+  .japanese-food-details {
+    max-width: 900px;
+    margin: 0 auto; /* Center the content horizontally */
+    text-align: center; /* Center the text content */
+  }
+
   .food-image-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
-    width: 600px; /* Set the desired width for the image container */
-    height: 400px; /* Set the desired height for the image container */
-    overflow: hidden; /* Hide any parts of the image that exceed the container's dimensions */
+    width: 100%; /* Set the image container to occupy the full width */
+    overflow: hidden;
   }
 
   .food-image {
-    width: 100%; /* Set the width to 100% to fill the container */
-    height: 100%; /* Set the height to 100% to fill the container */
-    object-fit: cover; /* Maintain the image's aspect ratio and cover the container */
+    width: auto; /* Allow the image to scale proportionally */
+    max-height: 100%; /* Set the maximum height to fit within the container */
+    max-width: 100%; /* Set the maximum width to fit within the container */
   }
 
   .food-name {
-    font-size: 24px; /* Adjust the font size as needed */
-    font-weight: bold; /* Add bold style to the meal names */
+    font-size: 42px; /* Increase the font size */
+    font-weight: bold;
+    margin-bottom: 20px; /* Add a little space below the food name */
   }
 
-  .description, .ingredients {
+  .description, .ingredients, .price {
     margin-bottom: 20px;
   }
 </style>
