@@ -27,27 +27,27 @@
     <li class="list-item">I have used inline CSS - this is generally a very bad idea - separation of concerns... content should be in HTML, style in CSS. This is not a web design course, it's all about the Flask.</li>
     <li class="list-item">Finally - why Pizzas? - I use this as a (and I hate this term, but I'm tired and couldn't think of another one) 'Team Building Exercise' (YAY!) - everyone chips in $5 and we order a ton of pizza. Not everyone can afford it - I normally find myself $30 or so out of pocket <b>#teacherlife</b> but it's a good chance to get photos of pizzas to explore the use of images in a Flask app.</li>
   </ol>
-
+  
   <style>
     /* Your existing custom styles */
-
+  
     /* New styles for the base selection section */
     .base-section {
       margin: 20px 0;
     }
-
+  
     .base-list {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-around;
     }
-
+  
     .base-item {
       text-align: center;
       margin: 10px;
       width: 200px;
     }
-
+  
     .base-image {
       width: 100px;
       height: 100px;
@@ -57,7 +57,7 @@
       margin-bottom: 5px;
       cursor: pointer; /* Add a pointer cursor to indicate clickable items */
     }
-
+  
     .selected-base-image {
       width: 150px;
       height: 150px;
@@ -67,7 +67,7 @@
       margin-top: 10px;
     }
   </style>
-
+  
   <script>
     // JavaScript function to display the selected base's image
     function showBaseImage(imageUrl) {
@@ -75,4 +75,4 @@
       imageContainer.src = imageUrl;
     }
   </script>
-{% endblock %}
+  {% endblock %}

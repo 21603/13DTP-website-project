@@ -3,7 +3,9 @@
 
 /* Global styles */
 .page-container {
-  /* Add any global styles here */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Assuming 'home-body' class is defined in layout.css */
