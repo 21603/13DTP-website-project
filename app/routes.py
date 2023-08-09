@@ -16,13 +16,6 @@ def update_image_urls():
     # Get all the bases from the database
     bases = models.Base.query.all()
 
-    # Update the image URLs as needed
-    for base in bases:
-        if base.id == 1:  # Update the image URL for the base with ID 1 (rice)
-            base.image_url = "/static/images/new_rice_image.jpg"
-        elif base.id == 2:  # Update the image URL for the base with ID 2 (Noodles)
-            base.image_url = "/static/images/new_noodles_image.jpg"
-        # Add more conditions to update other image URLs if needed
 
     # Commit the changes to the database
     db.session.commit()

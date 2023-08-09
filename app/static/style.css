@@ -24,7 +24,7 @@
 .base-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .base-item {
@@ -33,15 +33,14 @@
   width: 150px;
 }
 
-/* Modified styles for the base images */
 .base-image {
-  width: 100px;
-  height: 100px;
+  width: 300px; /* Adjust the width of the base images */
+  height: 300px; /* Adjust the height of the base images */
   object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  margin-bottom: 5px;
-  cursor: pointer; /* Add a pointer cursor to indicate clickable items */
+  border: 12px solid #e00000;
+  border-radius: 100%; /* This rule creates the circular shape */
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .selected-base-image {
@@ -52,7 +51,6 @@
   border-radius: 50%;
   margin-top: 10px;
 }
-
 
 /* New styles for the About Us page */
 .about-container {

@@ -5,16 +5,18 @@
 <div class="base-section">
   <h2>Select a Base:</h2>
   <div class="base-list">
+    <div class="base-row">
       {% for base in bases %}
       <div class="base-item">
-          <input type="radio" name="selected_base" value="{{ base.id }}" onclick="showBaseImage('{{ base.image_url }}')">
-          <img src="{{ base.image_url }}" alt="{{ base.name }}" class="base-image">
-          <p>{{ base.name }}</p>
+        <input type="radio" name="selected_base" value="{{ base.id }}" onclick="showBaseImage('{{ base.image_url }}')">
+        <img src="{{ base.image_url }}" alt="{{ base.name }}" class="base-image">
+        <p>{{ base.name }}</p>
       </div>
       {% endfor %}
+    </div>
   </div>
-  <img id="selected-base-image" src="" alt="Selected Base Image" class="selected-base-image">
 </div>
+
 
   <h2 class="section-title">Japanese Food Features:</h2>
   <img src="{{ url_for('static', filename='images/Oseti.jpg') }}" alt="Japanese Food Image">
