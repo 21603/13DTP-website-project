@@ -1,6 +1,3 @@
-/* Your existing custom styles */
-/* Add your existing styles here, if you have any */
-
 /* Global styles */
 .page-container {
   display: flex;
@@ -16,41 +13,6 @@
   /* Add any additional styles for the div if needed */
 }
 
-/* New styles for the base selection section */
-.base-section {
-  margin: 20px 0;
-}
-
-.base-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.base-item {
-  text-align: center;
-  margin: 10px;
-  width: 150px;
-}
-
-.base-image {
-  width: 300px; /* Adjust the width of the base images */
-  height: 300px; /* Adjust the height of the base images */
-  object-fit: cover;
-  border: 12px solid #e00000;
-  border-radius: 100%; /* This rule creates the circular shape */
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-
-.selected-base-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  margin-top: 10px;
-}
 
 /* New styles for the About Us page */
 .about-container {
@@ -58,18 +20,6 @@
   margin: 20px auto;
   max-width: 800px;
   background-color: #1e1e1e; /* Dark gray background color */
-}
-
-.about-header {
-  font-size: 45px;
-  color: rgb(0, 0, 0);
-  margin-bottom: 20px;
-}
-
-.about-text {
-  font-size: 20px;
-  color: rgb(0, 0, 0);
-  line-height: 1.5;
 }
 
 /* New styles for the Japanese Food page */
@@ -105,40 +55,4 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-
-/* New styles for the base selection section */
-.base-section {
-  margin: 20px 0;
-}
-
-.base-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-
-.base-item {
-  text-align: center;
-  margin: 10px;
-  width: 150px;
-}
-
-.base-image {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  margin-bottom: 5px;
-  cursor: pointer; /* Add a pointer cursor to indicate clickable items */
-}
-
-.selected-base-image {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border: 1px solid #ccc;
-  border-radius: 50%;
-  margin-top: 10px;
 }
