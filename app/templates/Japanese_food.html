@@ -29,10 +29,20 @@
   /* Add your existing CSS styles here */
 
   /* Additional styles for Japanese_food.html */
+  body {
+    background-image: url("{{ url_for('static', filename='images/japanese-sayagata-asian-traditional-geometric-seamless-pattern-with-light-yellow-gold-color-background-use-for-fabric-textile-cover-interior-decoration-elements-wrapping-vector.jpg') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
   .japanese-food-details {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto; /* Center the content horizontally */
     text-align: center; /* Center the text content */
+    background-color: #cdcdcd;
+    padding: 30px;
+    border-radius: 10px;
   }
 
   .food-image-container {
@@ -45,8 +55,8 @@
 
   .food-image {
     width: auto; /* Allow the image to scale proportionally */
-    max-height: 100%; /* Set the maximum height to fit within the container */
-    max-width: 100%; /* Set the maximum width to fit within the container */
+    max-height: 80%; /* Set the maximum height to fit within the container */
+    max-width: 80%; /* Set the maximum width to fit within the container */
   }
 
   .food-name {
@@ -59,5 +69,6 @@
     margin-bottom: 20px;
   }
 </style>
+
 
 {% endblock %}

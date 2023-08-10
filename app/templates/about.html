@@ -3,11 +3,40 @@
 <head>
   <title>About Us - Japanese Food Website</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
+    .about-container {
+      max-width: 900px;
+      margin: 0 auto; /* Center the content horizontally */
+      text-align: center; /* Center the text content */
+      background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background */
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 50px; /* Adjust the top margin */
+    }
+
+    .about-header {
+      font-size: 36px; /* Adjust the font size */
+      font-weight: bold;
+      margin-bottom: 20px; /* Add a little space below the header */
+    }
+
+    .about-text {
+      font-size: 18px; /* Adjust the font size */
+      line-height: 1.6;
+    }
+  </style>
 </head>
 <body>
   {% extends 'layout.html' %}
   {% block content %}
-    <div class="about-container"> <!-- Add the 'about-container' class here -->
+    <div class="about-container">
       <h1 class="about-header">About Us</h1>
       <div class="about-text">
         <p>Our website is all about Japanese food. Discover a variety of traditional and modern dishes, like sushi, tempura, and ramen.</p>
