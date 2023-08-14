@@ -32,11 +32,17 @@
 </div>
 
 
-<section class="all_Japanese_food">
-  <h2 class="section-title">All Japanese Meals page</h2>
-  <p class="section-text">Click the image below to go to the all meals page</p>
-
+<section class="all_Japanese_food" style="margin-bottom: 40px;">
+  <h2 class="section-title" style="margin-left: 80px;">All Japanese Meals</h2>
+  <div class="all-Japanese-food-description" style="padding: 0 80px;">
+    <p class="description-text">
+      Indulge in the enchanting world of Japanese cuisine—where every dish is a masterpiece of flavors and artistry. From delicate sushi rolls to hearty ramen bowls, each bite is a journey through time and tradition. The ancient blends harmoniously with the modern, creating a fusion that dances on your taste buds and resonates with your senses. Japanese dining isn't just about sustenance; it's a captivating experience that intertwines meticulous craftsmanship with a rich cultural legacy. Immerse yourself in the umami of miso, the allure of tempura, and the elegance of bento boxes. Step into a culinary voyage that captures the essence of Japan's heritage, served with a side of culinary mastery.
+      <a href="{{ url_for('all_Japanese_food') }}" class="all-Japanese-food-link">See All Japanese Food</a>
+    </p>
+  </div>
 </section>
+
+
 <style>
   /* Your custom styles here */
   body {
@@ -47,7 +53,7 @@
     }
 
   .main-content {
-    padding: 20px 0;
+    padding: 0px 0;
   }
 
   .intro-section,
@@ -139,6 +145,24 @@
     z-index: -1;
   }
 
-  /* Other styles... */
+  .all-Japanese-food-link {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007BFF;
+    text-decoration: none;
+    border-bottom: 2px solid #007BFF;
+    padding-bottom: 2px; /* Add an underline-like effect */
+    margin-left: 10px; /* Add some space to the left of the link */
+  }
+
+  .all-Japanese-food-link:hover {
+    color: #0056b3; /* Change color on hover for better user feedback */
+  }
+
+  .all-Japanese-food-description {
+    font-size: 24px;
+    line-height: 1.6;
+    text-align: justify;
+  }
 </style>
 {% endblock %}
