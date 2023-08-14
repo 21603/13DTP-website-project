@@ -17,8 +17,14 @@
 </ul>
 
 <style>
-  /* Add your existing CSS styles here */
 
+body {
+      background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+  /* Add your existing CSS styles here */
   .food-list {
     list-style: none;
     display: grid;

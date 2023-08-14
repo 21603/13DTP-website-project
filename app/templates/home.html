@@ -11,37 +11,47 @@
   </section>
 
   <section class="base-section">
-    <h2 class="section-title">Select the Category:</h2>
-    <div class="base-list">
-      <div class="base-row">
-        {% for base in bases %}
-        <div class="base-item">
-          <div class="base-image-box">
-            <img src="{{ base.image_url }}" alt="{{ base.name }}" class="base-image">
+    <h2 class="section-title">Bases Used in the Meals We Are Showing</h2>
+    <div class="base-background"> <!-- Add the new background container -->
+      <div class="background-overlay"></div> <!-- Add the overlay -->
+      <div class="base-list">
+        <div class="base-row">
+          {% for base in bases %}
+          <div class="base-item">
+            <div class="base-image-box">
+              <img src="{{ base.image_url }}" alt="{{ base.name }}" class="base-image">
+            </div>
+            <p class="base-name">{{ base.name | safe }}</p>
+            <p class="base-description">{{ base.description | safe }}</p>
           </div>
-          <p class="base-name">{{ base.name | safe }}</p>
-          <p class="base-description">{{ base.description | safe }}</p> <!-- Display the description below the base name -->
+          {% endfor %}
         </div>
-        {% endfor %}
       </div>
-    </div>
+    </div> <!-- Close the background container -->
   </section>
 </div>
 
+
+<section class="all_Japanese_food">
+  <h2 class="section-title">All Japanese Meals page</h2>
+  <p class="section-text">Click the image below to go to the all meals page</p>
+
+</section>
 <style>
-    /* Your custom styles here */
-    body {
-    background-image: url("{{ url_for('static', filename='images/japanese-background-floor-wall-background_43151-3159.avif') }}");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-  }
-  
+  /* Your custom styles here */
+  body {
+      background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+
   .main-content {
-    padding: 20px;
+    padding: 20px 0;
   }
 
-  .intro-section, .base-section {
+  .intro-section,
+  .base-section {
     margin-bottom: 40px;
   }
 
@@ -62,46 +72,71 @@
     margin-top: 20px;
   }
 
-   /* New styles for the base selection section */
-   .base-list {
+  .base-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
   }
 
   .base-item {
+    position: relative; /* Enable proper z-index positioning */
     text-align: center;
-    margin: 40px;
-    width: 500px;
+    margin: 30px 15px;
+    width: 600px;
+    z-index: 1; /* Bring the base items above the background */
   }
 
   .base-image-box {
-    width: 400px; /* Increase the width for larger images */
-    height: 400px; /* Increase the height for larger images */
-    border: 18px solid #5d3605;
-    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    border: 18px solid #533005;
+    border-radius: 50%; /* Circle shape */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 0px;
+    margin: 0 auto;
   }
 
   .base-image {
-    width: 380px; /* Increase the width of the base images */
-    height: 380px; /* Increase the height of the base images */
+    width: 100%; /* Make the image fill the container */
+    height: 100%;
     object-fit: cover;
-    border-radius: 100%;
+    border-radius: 50%; /* Maintain circular shape */
   }
 
   .base-name {
-    font-size: 20px; /* Increase the font size of the base names */
-    margin-top: 10px;
+    font-size: 28px;
+    margin-top: 15px;
+    color: #ffffff; /* White text color for better visibility */
   }
 
   .base-description {
-    font-size: 16px; /* Adjust the font size of the base descriptions */
-    margin-top: 10px;
-    color: #303030; /* Adjust the color of the description text */
+    font-size: 20px;
+    margin-top: 15px;
+    color: #ffffff; /* White text color for better visibility */
+    text-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5); /* Add a subtle text shadow */
+  }
+
+  .base-background {
+    background-image: url("{{ url_for('static', filename='images/3c69e20f-0064-4c28-820d-02d99ec2cbbf.jpg') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative; /* Ensure proper positioning of the contained elements */
+    z-index: -1; /* Push the background behind other content */
+    backdrop-filter: blur(0px); /* Apply a blur effect to the background */
+  }
+
+  .background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+    z-index: -1;
   }
 
   /* Other styles... */
