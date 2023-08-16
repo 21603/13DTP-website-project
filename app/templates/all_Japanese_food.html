@@ -1,70 +1,114 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<h1 class="page-title">All Japanese Food</h1>
+<div class="food-container">
+  <!-- Title for the page -->
+  <h1 class="page-title">Explore Delicious Japanese Cuisine</h1>
 
-<ul class="food-list">
-  {% for food in Japanese_food %}
-    <li class="food-item">
-      <a class="food-link" href="{{ url_for('Japanese_food', id=food.id) }}">
-        <div class="food-image-container">
-          <img class="food-image" src="{{ food.image_url }}" alt="{{ food.name }}">
-        </div>
-        <span class="food-name">{{ food.name }}</span>
-      </a>
-    </li>
-  {% endfor %}
-</ul>
+  <!-- List of Japanese food items -->
+  <ul class="food-list">
+    {% for food in Japanese_food %}
+      <li class="food-item">
+        <!-- Create a link for each food item -->
+        <a class="food-link" href="{{ url_for('Japanese_food', id=food.id) }}">
+          <!-- Container for food image -->
+          <div class="food-image-container">
+            <!-- Image of the food -->
+            <img class="food-image" src="{{ food.image_url }}" alt="{{ food.name }}">
+          </div>
+          <!-- Name of the food item -->
+          <span class="food-name">{{ food.name }}</span>
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
 
 <style>
-
+/* Basic styling for the page */
 body {
-      background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
-  /* Add your existing CSS styles here */
+  background-color: #f5f5f5;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
+
+/* Container for the content */
+.food-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Styling for the page title */
+.page-title {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+/* Styling for the list of food items */
+.food-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0;
+}
+
+/* Styling for each food item */
+.food-item {
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+}
+
+/* Hover effect for food items */
+.food-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Container for the food image */
+.food-image-container {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 70%; /* Maintain aspect ratio */
+}
+
+/* Styling for the food image */
+.food-image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Styling for the food name */
+.food-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #007BFF;
+  margin-top: 15px;
+  text-align: center;
+}
+
+/* Styling for the food link */
+.food-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  padding: 20px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
   .food-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust the image container width */
-    grid-gap: 20px;
-    padding: 0;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
-
-  .food-item {
-    text-align: center;
-  }
-
-  .food-image-container {
-    width: 250px; /* Set the desired width for the image container */
-    height: 150px; /* Set the desired height for the image container */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    margin: 0 auto;
-  }
-
-  .food-image {
-    width: 100%; /* Set the width to 100% to fill the container */
-    height: 100%; /* Set the height to 100% to fill the container */
-    object-fit: cover; /* Maintain the image's aspect ratio and cover the container */
-  }
-
-  .food-name {
-    font-size: 16px; /* Adjust the font size as needed */
-    font-weight: bold; /* Add bold style to the food names */
-    color: #007BFF; /* Set the color of the meal names to a preferred value */
-  }
-
-  .food-link {
-    text-decoration: none; /* Remove underline from the link */
-    color: #007BFF; /* Set the link color to a preferred value */
-    display: block; /* Make the link fill the entire container width */
-  }
+}
 </style>
 
 {% endblock %}
