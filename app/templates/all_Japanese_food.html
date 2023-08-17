@@ -109,6 +109,16 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
+
+/* Background image */
+body {
+  background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Helvetica Neue', sans-serif;
+  margin: 0;
+}
 </style>
 
 {% endblock %}
