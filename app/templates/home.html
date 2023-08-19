@@ -3,7 +3,7 @@
 {% block content %}
 <div class="main-content">
   <section class="intro-section">
-    <h1 class="section-title">Discover Traditional Japanese Food</h1>
+    <h1 class="section-title-h1">Discover Traditional Japanese Food</h1> <!-- Apply a different font to h1 -->
     <p class="section-text">
       Immerse yourself in the rich world of traditional Japanese cuisine! Explore a mosaic of flavors, textures, and cultural heritage that defines Japanese gastronomy.
     </p>
@@ -12,8 +12,8 @@
 
   <section class="base-section">
     <h2 class="section-title">Bases Used in the Meals We Are Showing</h2>
-    <div class="base-background"> <!-- Add the new background container -->
-      <div class="background-overlay"></div> <!-- Add the overlay -->
+    <div class="base-background">
+      <div class="background-overlay"></div>
       <div class="base-list">
         <div class="base-row">
           {% for base in bases %}
@@ -27,10 +27,9 @@
           {% endfor %}
         </div>
       </div>
-    </div> <!-- Close the background container -->
+    </div>
   </section>
 </div>
-
 
 <section class="all_Japanese_food" style="margin-bottom: 40px;">
   <h2 class="section-title" style="margin-left: 80px;">All Japanese Meals</h2>
@@ -45,12 +44,52 @@
 
 <style>
   /* Your custom styles here */
+  /* Your custom styles here */
   body {
-      background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-    }
+    background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Your Chosen Font', sans-serif; /* Use the same font as in all_Japanese_food.html */
+    margin: 0;
+  }
+
+  .main-content {
+    padding: 0px 0;
+  }
+
+  .intro-section,
+  .base-section,
+  .all_Japanese_food {
+    margin-bottom: 40px;
+  }
+
+  .section-title-h1,
+  .section-title,
+  .all-Japanese-food-link {
+    font-family: 'Your Chosen Font', sans-serif; /* Use the same font as in all_Japanese_food.html */
+  }
+
+  .section-title-h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+
+  .section-title,
+  .all-Japanese-food-link {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+
+  .section-text,
+  .description-text,
+  .base-name,
+  .base-description,
+  .all-Japanese-food-description {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
 
   .main-content {
     padding: 0px 0;
