@@ -44,13 +44,12 @@
 
 <style>
   /* Your custom styles here */
-  /* Your custom styles here */
   body {
-    background-image: url("{{ url_for('static', filename='images/Gray back ground.avif') }}");
+    background-image: url("{{ url_for('static', filename='images/') }}");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Your Chosen Font', sans-serif; /* Use the same font as in all_Japanese_food.html */
+    font-family: 'Your Chosen Font', sans-serif; 
     margin: 0;
   }
 
@@ -62,12 +61,14 @@
   .base-section,
   .all_Japanese_food {
     margin-bottom: 40px;
+    margin-left: 28px;
+    margin-right: 28px;
   }
 
   .section-title-h1,
   .section-title,
   .all-Japanese-food-link {
-    font-family: 'Your Chosen Font', sans-serif; /* Use the same font as in all_Japanese_food.html */
+    font-family: 'Your Chosen Font', sans-serif; 
   }
 
   .section-title-h1 {
