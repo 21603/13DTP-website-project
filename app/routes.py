@@ -64,6 +64,31 @@ def base(base_id):
 
     return render_template("base.html", base=base, meals_of_base=meals_of_base)
 
+@app.route('/base/1')
+def rice_base():
+    rice_base = models.Base.query.get(1)
+    return render_template('base.html', base=rice_base)
+
+@app.route('/base/2')
+def noodle_base():
+    noodle_base = models.Base.query.get(2)
+    return render_template('base.html', base=noodle_base)
+
+@app.route('/base/3')
+def deep_fried_food_base():
+    deep_fried_food_base = models.Base.query.get(3)
+    return render_template('base.html', base=deep_fried_food_base)
+
+@app.route('/base/4')
+def seafood_base():
+    seafood_base = models.Base.query.get(4)
+    return render_template('base.html', base=seafood_base)
+
+@app.route('/base/5')
+def wagashi_base():
+    wagashi_base = models.Base.query.get(5)
+    return render_template('base.html', base=wagashi_base)
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
