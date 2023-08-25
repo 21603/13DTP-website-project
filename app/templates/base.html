@@ -1,15 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>{{ base.name }} - Base Detail</title>
-    <!-- Add your CSS and other necessary includes here -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base_detail.css') }}">
-</head>
-<body>
     <div class="base-details">
-        <h1 class="base-name">{{ base.name }} </h1>
+        <h1 class="base-name">{{ base.name }}</h1>
         <div class="description">
             <h2>Description:</h2>
             <p>{{ base.description }}</p>
@@ -19,18 +11,77 @@
             <ul class="meal-grid">
                 {% for meal in base.meals %}
                     <li class="meal-item">
-                        <img src="{{ meal.image_url }}" alt="{{ meal.name }} Image" class="meal-image">
-                        <p class="meal-name">{{ meal.name }}</p>
+                        <div class="meal-container">
+                            <a href="{{ url_for('Japanese_food', id=meal.id) }}"> <!-- Add anchor tag -->
+                                <img src="{{ meal.image_url }}" alt="{{ meal.name }} Image" class="meal-image">
+                                <p class="meal-name">{{ meal.name }}</p>
+                            </a>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
         </div>
-        <!-- Add more content or navigation links here -->
     </div>
+
+    <style>
+
+body {
+    background-color: rgba(129, 72, 2, 0.395);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Noto Sans JP', sans-serif; /* Apply the chosen font */
+    }
+
+    .description, .meals {
+        margin-left: 30px; /* Adjust the value as needed */
+    }
     
-    <footer>
-        <!-- Your footer content -->
-    </footer>
-</body>
-</html>
+.meal-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+}
+
+.meal-name{
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.meal-item {
+    width: calc(50% - 10px); /* 50% width minus the gap */
+    margin-bottom: 20px;
+}
+
+.meal-container {
+    text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.meal-image {
+    color: rgb(30, 18, 255);
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer; /* Change cursor to indicate clickable */
+    transition: transform 0.2s; /* Add smooth transition on hover */
+}
+
+.meal-image:hover {
+    transform: scale(1.05); /* Enlarge image slightly on hover */
+}
+
+.meal-name {
+    font-size: 18px;
+    margin-top: 10px;
+    text-decoration: underline; /* Underline to indicate clickable */
+    cursor: pointer; /* Change cursor to indicate clickable */
+    transition: color 0.2s; /* Add smooth color transition on hover */
+}
+
+
+    </style>
 {% endblock %}
