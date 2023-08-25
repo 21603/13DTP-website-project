@@ -15,14 +15,10 @@ import app.models as models
 def update_image_urls():
     # Get all the bases from the database
     bases = models.Base.query.all()
-    
-    # Update the image URLs for each base
-    for base in bases:
-        base.image_url = "new_image_url"  # Update this with the actual new image URL
-    
+
+
     # Commit the changes to the database
     db.session.commit()
-
 
 @app.route('/')
 def root():
@@ -63,31 +59,6 @@ def base(base_id):
     meals_of_base = base.meals  # Accessing meals associated with the base
 
     return render_template("base.html", base=base, meals_of_base=meals_of_base)
-
-@app.route('/base/1')
-def rice_base():
-    rice_base = models.Base.query.get(1)
-    return render_template('base.html', base=rice_base)
-
-@app.route('/base/2')
-def noodle_base():
-    noodle_base = models.Base.query.get(2)
-    return render_template('base.html', base=noodle_base)
-
-@app.route('/base/3')
-def deep_fried_food_base():
-    deep_fried_food_base = models.Base.query.get(3)
-    return render_template('base.html', base=deep_fried_food_base)
-
-@app.route('/base/4')
-def seafood_base():
-    seafood_base = models.Base.query.get(4)
-    return render_template('base.html', base=seafood_base)
-
-@app.route('/base/5')
-def wagashi_base():
-    wagashi_base = models.Base.query.get(5)
-    return render_template('base.html', base=wagashi_base)
 
 @app.errorhandler(404)
 def page_not_found(e):

@@ -1,24 +1,36 @@
 {% extends 'layout.html' %}
 {% block content %}
-<div class="base-details">
-    <h1 class="base-name">{{ base.name }}</h1>
-    <div class="base-image-container">
-        <img src="{{ url_for('static', filename=base.image_url) }}" alt="{{ base.name }}" class="base-image">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ base.name }} - Base Detail</title>
+    <!-- Add your CSS and other necessary includes here -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/base_detail.css') }}">
+</head>
+<body>
+    <div class="base-details">
+        <h1 class="base-name">{{ base.name }} </h1>
+        <div class="description">
+            <h2>Description:</h2>
+            <p>{{ base.description }}</p>
+        </div>
+        <div class="meals">
+            <h2>Meals Associated with {{ base.name }}:</h2>
+            <ul class="meal-grid">
+                {% for meal in base.meals %}
+                    <li class="meal-item">
+                        <img src="{{ meal.image_url }}" alt="{{ meal.name }} Image" class="meal-image">
+                        <p class="meal-name">{{ meal.name }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <!-- Add more content or navigation links here -->
     </div>
-    <div class="description">
-        <h2>Description:</h2>
-        <p>{{ base.description }}</p>
-    </div>
-    <div class="meals">
-        <h2>Meals Associated with {{ base.name }}:</h2>
-        <ul>
-            {% for meal in base.meals %}
-                <li>
-                    <img src="{{ meal.image_url }}" alt="{{ meal.name }} Image" class="meal-image">
-                    {{ meal.name }}
-                </li>
-            {% endfor %}
-        </ul>
-    </div>
-</div>
+    
+    <footer>
+        <!-- Your footer content -->
+    </footer>
+</body>
+</html>
 {% endblock %}
