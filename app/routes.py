@@ -15,10 +15,14 @@ import app.models as models
 def update_image_urls():
     # Get all the bases from the database
     bases = models.Base.query.all()
-
-
+    
+    # Update the image URLs for each base
+    for base in bases:
+        base.image_url = "new_image_url"  # Update this with the actual new image URL
+    
     # Commit the changes to the database
     db.session.commit()
+
 
 @app.route('/')
 def root():

@@ -2,17 +2,32 @@
 <html>
 <head>
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
         nav {
-            text-align: center;
             background-color: #333;
-            padding: 32px 0;
+            padding: 16px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
         }
 
         a {
             color: white;
             text-decoration: none;
-            margin: 0 15px;
+            margin: 0 15px; /* Increased spacing */
             font-weight: bold;
+            font-size: 16px;
             transition: color 0.3s;
         }
 
@@ -20,18 +35,41 @@
             color: #ff6600;
         }
 
-        hr {
-            border: none;
-            border-top: 1px solid #777;
-            margin: 20px 0;
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #000;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/all_Japanese_food">All Japanese Food</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/about">About</a>
+            <div class="dropdown">
+                <a href="#">Category</a>
+                <div class="dropdown-content">
+                    <!-- Update the URLs to use the /base/... route -->
+                    <a href="/base/1">Rice</a>
+                    <a href="/base/2">Noodle</a>
+                    <a href="/base/3">Deep Fried Food</a>
+                    <a href="/base/4">Seafood</a>
+                    <a href="/base/5">Wagashi</a>
+                </div>
+            </div>
+            <a href="/all_Japanese_food">All Japanese Food</a>
+        </div>
     </nav>
     <hr>
 </body>
