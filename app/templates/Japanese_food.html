@@ -1,7 +1,6 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<!-- Japanese_food.html -->
 <div class="japanese-food-details" style="background-color: #cdcdcd; padding: 30px; border-radius: 10px;">
   <h1 class="food-name" style="font-size: 42px;">{{ Japanese_food.name }}</h1>
   <div class="food-image-container" style="margin-bottom: 30px; max-height: 500px;">
@@ -26,15 +25,15 @@
 </div>
 
 <style>
-  /* Add your existing CSS styles here */
+  /* Css styles
 
-  /* Additional styles for Japanese_food.html */
+  /* styles for Japanese_food.html */
   body {
-      background-image: url("{{ url_for('static', filename='images/white Japanese related background-144243.avif') }}");
+      background-color:#432d007c;
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      font-family: 'Noto Sans JP', sans-serif; /* Apply the chosen font */
+      font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
     }
 
   .japanese-food-details {

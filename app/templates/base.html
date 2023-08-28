@@ -12,8 +12,10 @@
                 {% for meal in base.meals %}
                     <li class="meal-item">
                         <div class="meal-container">
-                            <a href="{{ url_for('Japanese_food', id=meal.id) }}"> <!-- Add anchor tag -->
-                                <img src="{{ meal.image_url }}" alt="{{ meal.name }} Image" class="meal-image">
+                            <a href="{{ url_for('Japanese_food', id=meal.id) }}">
+                                <div class="image-container">
+                                    <img src="{{ meal.image_url }}" alt="{{ meal.name }} Image" class="meal-image">
+                                </div>
                                 <p class="meal-name">{{ meal.name }}</p>
                             </a>
                         </div>
@@ -26,11 +28,11 @@
     <style>
 
 body {
-    background-color: rgba(129, 72, 2, 0.395);
+    background-color: rgb(230, 220, 207);
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
-      font-family: 'Noto Sans JP', sans-serif; /* Apply the chosen font */
+      font-family: 'Noto Sans JP', sans-serif; /* the chosen font */
     }
 
     .description, .meals {
