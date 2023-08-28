@@ -9,13 +9,13 @@
         }
 
         nav {
-        background-color: #355b2d;
-        padding: 16px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-right: 32px; /* Add padding to the left side */
-    }
+            background-color: #355b2d;
+            padding: 16px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-right: 32px; /* Add padding to the left side */
+        }
 
         .nav-links {
             display: flex;
@@ -33,17 +33,29 @@
         }
 
         a:hover {
-            color: #ff6600;
+            color: rgb(255, 128, 0);
         }
 
         .dropdown {
             position: relative;
         }
 
+        .dropdown::after {
+            content: "\25BE"; /* Unicode downward-pointing triangle character */
+            margin-left: 5px;
+            font-size: 20px; /* Increase the font size for a bigger triangle */
+            color:rgb(255, 255, 255);
+        }
+
+        .dropdown:hover::after {
+            content: "\25B4"; /* Unicode upward-pointing triangle character on hover */
+            color:rgb(255, 255, 255);
+        }
+
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #000;
+            background-color: #417275;
             min-width: 160px;
             z-index: 1;
         }

@@ -47,9 +47,20 @@ body {
     padding: 0;
 }
 
-.meal-name{
-    color: black;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+.meal-name {
+    font-size: 18px;
+    margin-top: 10px;
+    padding: 5px 10px; /* Add some padding to the meal name for better visibility */
+    text-decoration: underline;
+    cursor: pointer;
+    transition: color 0.2s, background-color 0.2s;
+    color: rgb(0, 0, 0); /* Set the initial text color */
+    background-color: rgba(255, 255, 255, 0.8); /* Set an initial light background color */
+}
+
+.meal-name:hover {
+    color: rgb(255, 140, 0);
+    background-color: rgb(255, 250, 147);
 }
 
 .meal-item {

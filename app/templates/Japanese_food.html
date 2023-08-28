@@ -1,48 +1,54 @@
 {% extends 'layout.html' %}
 {% block content %}
 
-<div class="japanese-food-details" style="background-color: #cdcdcd; padding: 30px; border-radius: 10px;">
-  <h1 class="food-name" style="font-size: 42px;">{{ Japanese_food.name }}</h1>
-  <div class="food-image-container" style="margin-bottom: 30px; max-height: 500px;">
+<div class="japanese-food-details">
+  <h1 class="food-name">{{ Japanese_food.name }}</h1>
+  <div class="food-image-container">
     <img class="food-image" src="{{ Japanese_food.image_url }}" alt="{{ Japanese_food.name }}">
   </div>
   <div class="description">
-    <h2 style="font-size: 24px;">Description:</h2>
-    <p style="font-size: 20px;">{{ Japanese_food.description }}</p>
+    <h2>Description:</h2>
+    <p>{{ Japanese_food.description }}</p>
   </div>
   <div class="ingredients">
-    <h2 style="font-size: 24px;">Ingredients:</h2>
-    <ul style="font-size: 20px;">
+    <h2>Ingredients:</h2>
+    <ul>
       {% for ingredient in Japanese_food.ingredients %}
-        <li>{{ ingredient }}</li>
+        <li>
+          <span class="ingredient-name">{{ ingredient.name }}</span>
+          {% if ingredient.description %}
+            <p class="ingredient-description">{{ ingredient.description }}</p>
+          {% endif %}
+        </li>
       {% endfor %}
     </ul>
   </div>
   <div class="price">
-    <h2 style="font-size: 24px;">Price:</h2>
-    <p style="font-size: 20px;">{{ Japanese_food.price }}</p>
+    <h2>Price:</h2>
+    <p>{{ Japanese_food.price }}</p>
   </div>
 </div>
 
+
 <style>
-  /* Css styles
+  /* Css styles here */
 
   /* styles for Japanese_food.html */
   body {
-      background-color:#432d007c;
+      background-color: rgb(230, 220, 207);
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
       font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
     }
 
-  .japanese-food-details {
-    max-width: 800px;
-    margin: 0 auto; /* Center the content horizontally */
-    text-align: center; /* Center the text content */
-    background-color: #cdcdcd;
+    .japanese-food-details {
+    background-color: #fffecf;
     padding: 30px;
     border-radius: 10px;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
   }
 
   .food-image-container {
@@ -59,10 +65,20 @@
     max-width: 80%; /* Set the maximum width to fit within the container */
   }
 
-  .food-name {
-    font-size: 42px; /* Increase the font size */
+  .description, .ingredients, .price {
+    margin-bottom: 32px;
+  }
+
+  .ingredient-name {
     font-weight: bold;
-    margin-bottom: 20px; /* Add a little space below the food name */
+    color: #000000; /* Color for ingredient names */
+    font-size: 20px;
+  }
+
+  .ingredient-description {
+    font-size: 16px;
+    color: #323232; /* Color for ingredient descriptions */
+    margin: 5px 0 0 20px; /* Indent the description slightly */
   }
 
   .description, .ingredients, .price {
