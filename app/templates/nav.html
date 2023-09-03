@@ -28,7 +28,7 @@
             text-decoration: none;
             margin: 0 15px; /* Increased spacing */
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             transition: color 0.3s;
         }
 
@@ -55,7 +55,7 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: #417275;
+            background-color: #4e7375;
             min-width: 160px;
             z-index: 1;
         }
@@ -63,7 +63,35 @@
         .dropdown:hover .dropdown-content {
             display: block;
         }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
     </style>
+
+<script>
+    // JavaScript to handle dropdown behavior
+    document.addEventListener("DOMContentLoaded", function () {
+        var dropdowns = document.querySelectorAll(".dropdown");
+
+        dropdowns.forEach(function (dropdown) {
+            var timeoutId;
+
+            dropdown.addEventListener("mouseenter", function () {
+                clearTimeout(timeoutId); // Clear any existing timeout
+                this.classList.add("open"); // Open the dropdown
+            });
+
+            dropdown.addEventListener("mouseleave", function () {
+                var _this = this;
+                timeoutId = setTimeout(function () {
+                    _this.classList.remove("open"); // Close the dropdown after a delay
+                }, 300); // Adjust the delay (in milliseconds) as needed
+            });
+        });
+    });
+</script>
+
 </head>
 <body>
     <nav>
