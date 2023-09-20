@@ -1,8 +1,8 @@
 <head>
   <title>About Us - Japanese Food Website</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
   <link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Japanese_food.css') }}">
 </head>
 {% extends 'layout.html' %}
 {% block content %}
@@ -36,65 +36,6 @@
 </div>
 
 
-<style>
-  /* Css styles here */
-
-  /* styles for Japanese_food.html */
-  body {
-      background-color: rgb(230, 220, 207);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
-    }
-
-    .japanese-food-details {
-    background-color: #fffecfa7;
-    padding: 30px;
-    border-radius: 10px;
-    max-width: 1100px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .food-image-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Set the image container to occupy the full width */
-    overflow: hidden;
-  }
-
-  .food-image {
-    width: auto; /* Allow the image to scale proportionally */
-    max-height: 80%; /* Set the maximum height to fit within the container */
-    max-width: 80%; /* Set the maximum width to fit within the container */
-  }
-
-  .description, .ingredients, .price {
-    margin-bottom: 32px;
-  }
-
-  .ingredient-name {
-    font-weight: bold;
-    color: #000000; /* Color for ingredient names */
-    font-size: 20px;
-  }
-
-  .ingredient-description {
-    font-size: 16px;
-    color: #323232; /* Color for ingredient descriptions */
-    margin: 5px 0 0 20px; /* Indent the description slightly */
-  }
-
-  .description, .ingredients, .price {
-    margin-bottom: 20px;
-  }
-
-  ul {
-    list-style-type: none;
-  }
-</style>
 
 
 {% endblock %}

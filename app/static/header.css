@@ -1,0 +1,12 @@
+/* header.html custom styles here */
+
+header {
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1));
+    padding-top: 10px; /* Adjust the top padding as needed */
+    padding-bottom: 10px; /* Adjust the bottom padding as needed */
+  }
+
+  h1 {
+    color: rgba(0, 0, 0, 0.8);
+    padding-left: 28px;
+  }
