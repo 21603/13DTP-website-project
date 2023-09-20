@@ -1,208 +1,55 @@
-{% extends 'layout.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover Traditional Japanese Food</title>
+  <!-- Link to your external CSS file -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+</head>
+<body>
+  {% extends 'layout.html' %}
+  {% block content %}
+    <div class="main-content">
+      <section class="intro-section">
+        <h1 class="section-title-h1">Discover Traditional Japanese Food</h1>
+        <p class="section-text">
+          Immerse yourself in the rich world of traditional Japanese cuisine! Explore a mosaic of flavors, textures, and cultural heritage that defines Japanese gastronomy.
+        </p>
+        <img src="{{ url_for('static', filename='images/TP0420h-bisyoku-3-3-02.jpg') }}" alt="Japanese Food Image" class="hero-image">
+      </section>
 
-{% block content %}
-<div class="main-content">
-  <section class="intro-section">
-    <h1 class="section-title-h1">Discover Traditional Japanese Food</h1> <!-- Apply a different font to h1 -->
-    <p class="section-text">
-      Immerse yourself in the rich world of traditional Japanese cuisine! Explore a mosaic of flavors, textures, and cultural heritage that defines Japanese gastronomy.
-    </p>
-    <img src="{{ url_for('static', filename='images/TP0420h-bisyoku-3-3-02.jpg') }}" alt="Japanese Food Image" class="hero-image">
-  </section>
-
-  <section class="base-section">
-    <h2 class="section-title">Bases Used in the Meals We Are Showing</h2>
-    <div class="base-background">
-      <div class="background-overlay"></div>
-      <div class="base-list">
-        <div class="base-row">
-          {% for base in bases %}
-          <div class="base-item">
-            <div class="base-image-box">
-              <img src="{{ base.image_url }}" alt="{{ base.name }}" class="base-image">
+      <section class="base-section">
+        <h2 class="section-title">Bases Used in the Meals We Are Showing</h2>
+        <div class="base-background">
+          <div class="background-overlay"></div>
+          <div class="base-list">
+            <div class="base-row">
+              {% for base in bases %}
+              <div class="base-item">
+                <div class="base-image-box">
+                  <img src="{{ base.image_url }}" alt="{{ base.name }}" class="base-image">
+                </div>
+                <p class="base-name">{{ base.name | safe }}</p>
+                <p class="base-description">{{ base.description | safe }}</p>
+              </div>
+              {% endfor %}
             </div>
-            <p class="base-name">{{ base.name | safe }}</p>
-            <p class="base-description">{{ base.description | safe }}</p>
           </div>
-          {% endfor %}
         </div>
-      </div>
+      </section>
     </div>
-  </section>
-</div>
 
-<section class="all_Japanese_food" style="margin-bottom: 40px;">
-  <h2 class="section-title" style="margin-left: 80px;">All Japanese Meals</h2>
-  <div class="all-Japanese-food-description" style="padding: 0 80px;">
-    <p class="description-text">
-      Indulge in the enchanting world of Japanese cuisine—where every dish is a masterpiece of flavors and artistry. From delicate sushi rolls to hearty ramen bowls, each bite is a journey through time and tradition. The ancient blends harmoniously with the modern, creating a fusion that dances on your taste buds and resonates with your senses. Japanese dining isn't just about sustenance; it's a captivating experience that intertwines meticulous craftsmanship with a rich cultural legacy. Immerse yourself in the umami of miso, the allure of tempura, and the elegance of bento boxes. Step into a culinary voyage that captures the essence of Japan's heritage, served with a side of culinary mastery.
-      <a href="{{ url_for('all_Japanese_food') }}" class="all-Japanese-food-link">See All Japanese Food</a>
-    </p>
-  </div>
-</section>
-
-
-<style>
-  /* Your custom styles here */
-  body {
-    background-color: rgb(230, 220, 207);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
-    margin: 0;
-  }
-
-  .main-content {
-    padding: 0px 0;
-  }
-
-  .intro-section,
-  .base-section,
-  .all_Japanese_food {
-    margin-bottom: 40px;
-    margin-left: 28px;
-    margin-right: 28px;
-  }
-
-  .section-title-h1,
-  .section-title,
-  .all-Japanese-food-link {
-    font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
-  }
-
-  .section-title-h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
-  }
-
-  .section-title,
-  .all-Japanese-food-link {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-
-  .section-text,
-  .description-text,
-  .base-name,
-  .base-description,
-  .all-Japanese-food-description {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  
-
-  .main-content {
-    padding: 0px 0;
-  }
-
-  .intro-section,
-  .base-section {
-    margin-bottom: 40px;
-  }
-
-  .section-title {
-    font-size: 36px;
-    margin-bottom: 10px;
-  }
-
-  .section-text {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-
-  .hero-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
-    margin-top: 20px;
-  }
-
-  .base-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-    gap: 20px;
-  }
-
-  .base-item {
-    position: relative; /* Enable proper z-index positioning */
-    text-align: center;
-    margin: 30px 15px;
-    width: 600px;
-    z-index: 1; /* Bring the base items above the background */
-  }
-
-  .base-image-box {
-    width: 400px;
-    height: 400px;
-    border: 18px solid #533005;
-    border-radius: 50%; /* Circle shape */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-  }
-
-  .base-image {
-    width: 100%; /* Make the image fill the container */
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%; /* Maintain circular shape */
-  }
-
-  .base-name {
-    font-size: 28px;
-    margin-top: 15px;
-    color: #ffffff; /* White text color for better visibility */
-  }
-
-  .base-description {
-    font-size: 20px;
-    margin-top: 15px;
-    color: #ffffff; /* White text color for better visibility */
-    text-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5); /* Increased blur radius for a thicker text shadow */
-}
-
-  .base-background {
-    background-image: url("{{ url_for('static', filename='images/japanese-related background_23-2147514130.avif') }}");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative; /* Ensure proper positioning of the contained elements */
-    z-index: -1; /* Push the background behind other content */
-    backdrop-filter: blur(0px); /* Apply a blur effect to the background */
-  }
-
-  .background-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
-    z-index: -1;
-  }
-
-  .all-Japanese-food-link {
-    font-size: 20px;
-    font-weight: bold;
-    color: #007BFF;
-    text-decoration: none;
-    border-bottom: 2px solid #007BFF;
-    padding-bottom: 2px; /* Add an underline-like effect */
-    margin-left: 10px; /* Add some space to the left of the link */
-  }
-
-  .all-Japanese-food-link:hover {
-    color: #0056b3; /* Change color on hover for better user feedback */
-  }
-
-  .all-Japanese-food-description {
-    font-size: 24px;
-    line-height: 1.6;
-    text-align: justify;
-  }
-</style>
-{% endblock %}
+    <section class="all_Japanese_food" style="margin-bottom: 40px;">
+      <h2 class="section-title" style="margin-left: 80px;">All Japanese Meals</h2>
+      <div class="all-Japanese-food-description" style="padding: 0 80px;">
+        <p class="description-text">
+          Indulge in the enchanting world of Japanese cuisine—where every dish is a masterpiece of flavors and artistry. From delicate sushi rolls to hearty ramen bowls, each bite is a journey through time and tradition. The ancient blends harmoniously with the modern, creating a fusion that dances on your taste buds and resonates with your senses. Japanese dining isn't just about sustenance; it's a captivating experience that intertwines meticulous craftsmanship with a rich cultural legacy. Immerse yourself in the umami of miso, the allure of tempura, and the elegance of bento boxes. Step into a culinary voyage that captures the essence of Japan's heritage, served with a side of culinary mastery.
+          <a href="{{ url_for('all_Japanese_food') }}" class="all-Japanese-food-link">See All Japanese Food</a>
+        </p>
+      </div>
+    </section>
+  {% endblock %}
+</body>
+</html>
