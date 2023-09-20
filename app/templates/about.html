@@ -2,40 +2,8 @@
 <html>
 <head>
   <title>About Us - Japanese Food Website</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
-  <style>
-    body {
-      background-color: rgb(230, 220, 207);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
-    }
-
-    .about-container {
-      max-width: 600px;
-      margin: 0 auto; /* horizontally center the content */
-      text-align: center; /* Center the text content */
-      background-color: rgba(252, 251, 251, 0.474); /* Add a semi-transparent white background */
-      padding: 80px;
-      border-radius: 32px;
-      margin-top: 10px; /* Adjust the top spacen */
-    }
-
-    .about-header {
-      font-size: 36px; 
-      font-weight: bold;
-      margin-bottom: 50px; /* Add a little space below the header */
-      margin-top: -40px; /* Adjust the top margin */
-    }
-
-    .about-text {
-      font-size: 22px; /* Adjust the font size */
-      line-height: 1.6;
-    }
-
-  </style>
 </head>
 <body>
   {% extends 'layout.html' %}

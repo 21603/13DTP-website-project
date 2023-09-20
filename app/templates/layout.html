@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <title>{% block title %}{% endblock %}</title>
+<head>
+  <title>{% block title %}Japanese Food Website{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css') }}">
-   <!-- Link to Google Fonts for Noto Sans JP font -->
-   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
- </head>
- <body class="page-container">
-   {% include 'header.html' %}
-   {% include 'nav.html' %}
-   <div class="content-container">
-     {% block content %}{% endblock %}
-   </div>
-   {% include 'footer.html' %}
- </body>
+  <!-- Link to Google Fonts for Noto Sans JP font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+</head>
+<body class="page-container">
+  {% include 'header.html' %}
+  {% include 'nav.html' %}
+  <div class="content-container">
+    {% block content %}{% endblock %}
+  </div>
+  {% include 'footer.html' %}
+</body>
 </html>
