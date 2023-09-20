@@ -10,20 +10,11 @@ db.init_app(app)
 
 import app.models as models
 
-# ... Your existing routes and view functions ...
+# existing routes and view functions
 
-def update_image_urls():
-    # Get all the bases from the database
-    bases = models.Base.query.all()
-
-
-    # Commit the changes to the database
-    db.session.commit()
 
 @app.route('/')
 def root():
-    # Run the update_image_urls() function before retrieving the bases
-    update_image_urls()
     
     bases = models.Base.query.all()  # Retrieve all bases from the database
     return render_template('home.html', page_title='HOME', bases=bases)
@@ -63,6 +54,7 @@ def base(base_id):
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html")
+
 
 if __name__ == "__main__":
     app.run(debug=True)
