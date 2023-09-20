@@ -1,0 +1,12 @@
+/* common.css */
+body {
+    background-color: rgb(230, 220, 207);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+    margin: 0;
+    /* Add other common body styles here */
+}
+
+/* Add other common styles here */

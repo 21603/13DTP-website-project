@@ -1,36 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
-      }
-  
-      header {
-        background-image: linear-gradient(to right, rgba(255, 255, 255, 1));
-        padding-top: 10px; /* Adjust the top padding as needed */
-        padding-bottom: 10px; /* Adjust the bottom padding as needed */
-      }
-  
-      h1 {
-        color: rgba(0, 0, 0, 0.8);
-        padding-left: 28px;
-      }
-
-  
-      footer {
-        background-color: #9c9c9c;
-        padding: 10px 20px;
-        border-top: 1px solid #ddd;
-        margin-top: 15px;
-        /* margin-bottom: 5px; */ /* Remove margin-bottom */
-      }
-
-  
-      /* Other styles for your footer... */
-    </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="{{ url_for('static', filename='common.css') }}">
+    
 </head>
 <body>
   <header>
