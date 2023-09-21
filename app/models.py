@@ -46,7 +46,6 @@ class Ingredient(db.Model):
     # Columns for the Ingredient table
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String())
-    description = db.Column(db.Text())
 
     def __repr__(self):
         return self.name
