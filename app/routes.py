@@ -8,12 +8,10 @@ db = SQLAlchemy()
 database_url = 'sqlite:///' + os.path.join(basedir, "Japanese food.db")
 app.config['SQLALCHEMY_DATABASE_URI'] = database_url
 db.init_app(app)
-
 import app.models as models
 
+
 # existing routes and view functions
-
-
 @app.route('/')
 def root(): 
     bases = models.Base.query.all()  # Retrieve all bases from the database
@@ -30,7 +28,10 @@ def about():
 @app.route('/all_Japanese_food')
 def all_Japanese_food():
     Japanese_food = models.Meal.query.all()
-    return render_template("all_Japanese_food.html", Japanese_food=Japanese_food)
+    return render_template(
+        "all_Japanese_food.html",
+        Japanese_food=Japanese_food
+    )
 
 
 # Display the details of one Japanese food including its toppings

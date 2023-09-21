@@ -1,7 +1,8 @@
 from app.routes import db
 
 # represent the many-to-many relationship between Meal and Ingredient
-MealIngredient = db.Table('MealIngredient',
+MealIngredient = db.Table(
+    'MealIngredient',
     db.Column('mid', db.Integer, db.ForeignKey('Meal.id')),
     db.Column('iid', db.Integer, db.ForeignKey('Ingredient.id'))
 )
@@ -31,14 +32,18 @@ class Meal(db.Model):
     name = db.Column(db.String())
     description = db.Column(db.Text())
     price = db.Column(db.Text())
-    image_url = db.Column(db.Text())  # Add this line for the image URL
+    image_url = db.Column(db.Text())
 
     # Foreign key relationship to the Base table
     base_id = db.Column(db.Integer, db.ForeignKey('Base.id'))
 
     # Establishing a relationship with the Ingredient table through the
     # MealIngredient association table (many-to-many)
-    ingredients = db.relationship('Ingredient', secondary=MealIngredient, backref='meals')
+    ingredients = db.relationship(
+        'Ingredient',
+        secondary=MealIngredient,
+        backref='meals'
+    )
 
     def __repr__(self):
         return f'{self.name.upper()} MEAL'
