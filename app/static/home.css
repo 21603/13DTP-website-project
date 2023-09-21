@@ -60,7 +60,9 @@ body {
   .section-title {
     font-size: 36px;
     margin-bottom: 10px;
-  }
+    padding-left: 200px;
+}
+
   
   .section-text {
     font-size: 18px;
@@ -121,15 +123,16 @@ body {
     text-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
   }
   
-  .base-background {
-    background-image: url("static/images/japanese-related-background_23-2147514130.avif");
+  .base-section {
+    background-color:coral;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
     position: relative;
     z-index: -1;
     backdrop-filter: blur(0px);
-  }
+}
+
   
   .background-overlay {
     position: absolute;
